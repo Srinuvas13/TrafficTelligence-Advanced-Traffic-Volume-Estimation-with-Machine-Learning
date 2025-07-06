@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Traffic Volume Estimation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">  <!-- ✅ Flask correct -->
+
+</head>
+          <body class = "background">
+                    
+                              
+                                        <h1 class ="heading">Traffic Volume Estimation</h1>
+                            <div class="login">  
+                              <form action="{{url_for('predict')}}" method="post">
+                                        <h1>Please enter the following details</h1>
+                                        <label for="holiday">holiday:</label>
+                                        <select id="holiday" name="holiday">
+                                                  <option value=0>None</option>
+                                                  <option value=1>Columbus Day</option>
+                                                  <option value=2>Independence Day</option>
+                                                  <option value=3>Labor day</option>
+                                                  <option value=4>Martin Luther King Jr Day</option>
+                                                  <option value=5>Memorial Day</option>
+                                                  <option value=6>New Years Day</option>
+                                                  <option value=7>Christmas Day</option>
+                                                  <option value=8>State Fair</option>
+                                                  <option value=9>Thanksgiving Day</option>
+                                                  <option value=10>Veterans Day</option> 
+                                                  <option value=11>Washingtons Birthday</option>
+                                                                                                 
+                                        </select> &nbsp; &nbsp; <br>
+                                        <br>
+                                        <label>temp:</label>
+                                        <input type="number" name="temp" placeholder="temp" required /><br>
+                                        <br>
+                                        <label>rain:</label>
+                                        <input type="number" min="0" max="1" name="rain" placeholder="rain" required/> <br>
+                                        <br>
+                                        <label>snow:</label>
+                                        <input type="number" min="0" max="1" name="snow" placeholder="snow" required/> <br>
+                                        <br>
+                                        <label for="weather">weather:</label>
+                                        <select id="weather" name="weather" >
+                                                  <option value="0">Clear</option>
+                                                  <option value="1">Clouds</option>
+                                                  <option value="2">Drizzle</option>
+                                                  <option value="3">Fog</option>
+                                                  <option value="4">Haze</option>
+                                                  <option value="5">Mist</option>
+                                                  <option value="6">Rain</option>
+                                                  <option value="7">Smoke</option>
+                                                  <option value="8">Snow</option>
+                                                  <option value="9">Squall</option>
+                                                  <option value="10">Thunderstorm</option>
+                                                  
+                                        </select> &nbsp; &nbsp; <br>
+                                        <br>
+                                        <label>year:</label>
+                                        <input type="number" min="2012" max="2022" name="year" placeholder="year" required><br>
+                                        <br>
+                                        <label>mounth:</label>
+                                        <input type="number" min="1" max="12" name="mounth" placeholder="mounth" required><br>
+                                        <br>
+                                        <label>day:</label>
+                                        <input type="number" min="1" max="31" name="day" placeholder="day" required><br>
+                                        <br>
+                                        <label>hours:</label>
+                                        <input type="number" min="0" max="24" name="hours" placeholder="hours" required><br>
+                                        <br>
+                                        <label>minutes:</label>
+                                        <input type="number" min="0" max="60" name="minutes" placeholder="minutes" required><br>
+                                        <br>
+                                        <label>seconds:</label>
+                                        <input type="number" min="0" max="60" name="seconds" placeholder="seconds" required><br>
+                                        <br>
+                                        <br><br>
+                                        <center>
+                                        <button type="submit" class="btn btn-primary btn-block btn-large" style="text-align :center; width:200px" onclick="location.href='output.html'">Predict</button>
+                                        </center>
+                              </form>
+                              <br>
+                              <center>
+                              {{prediction_text}}
+                              </center>
+                              <br><br>
+
+                              <br>
+                               
+ </div>
+
+
+                    
+          </body>
+</html>

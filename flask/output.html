@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">  <!-- ✅ Flask correct -->
+
+</head>
+<body>
+    <br>
+    <h1 class="heading">Traffic Volume Estimation</h1>
+    <br><br>
+    <div>
+        <br>
+        <center>
+            <p>{{ Result }}</p>
+
+        </center>
+    </div>
+    <br><br>
+    <div>
+        <a href="/"> <button> ← Predict Again</button></a>
+    </div>
+</body>
+</html>
+          
